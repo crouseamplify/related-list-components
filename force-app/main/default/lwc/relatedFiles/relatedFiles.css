@@ -1,0 +1,266 @@
+/* Component container with border and proper spacing */
+.component-container {
+    background-color: var(--dxp-c-record-list-table-body-background-color, white);
+    border: var(--dxp-c-record-list-header-border-width, 1px) solid var(--dxp-c-record-list-header-border-color, #E5E5E5);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0;
+    overflow: hidden; /* Ensures header background goes to edges */
+}
+
+/* Header section with gray background */
+.header-section {
+    background-color: rgb(242, 242, 242);
+    margin: 0;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0;
+}
+
+/* Header title using site base font */
+.header-title {
+    font-family: var(--dxp-s-base-font-family, var(--dxp-s-body-font-family));
+    font-size: var(--dxp-s-base-font-size, var(--dxp-s-body-font-size));
+    margin: 0;
+    padding: 0;
+}
+
+/* Content area padding (everything except header) */
+.content-area {
+    padding: 0.75rem 1rem;
+}
+
+/* Enhanced empty state - shows header but minimal content */
+.empty-state-enhanced {
+    /* No content needed - just header will show */
+}
+
+/* Card styling */
+/* .slds-card {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: 0.25rem;
+} */
+
+/* Files container with scrolling */
+/* .slds-card__body.slds-card__body_inner {
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* Files content area */
+.files-content-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+/* Fixed View More button at bottom */
+.view-more-container {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(transparent, white 30%);
+    padding: 1rem 0 0.5rem 0;
+    margin-top: auto;
+    text-align: center;
+    border-top: 1px solid rgba(229, 229, 229, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* Custom scrollbar styling */
+.files-content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.files-content-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.files-content-area::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.files-content-area::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Attachment container - Case Feed Publisher style */
+.attachment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Individual attachment items - horizontal layout like publisher */
+.attachment-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+
+.attachment-item:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* File attachment box styling - publisher horizontal layout */
+.slds-box_x-small {
+    padding: 0.75rem;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    transition: background-color 0.1s ease;
+    cursor: pointer;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.slds-box_x-small:hover {
+    background-color: #f3f3f3;
+    border-color: #c9c7c5;
+}
+
+/* Enhanced file hover overlay */
+.file-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 0.25rem;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+}
+
+.attachment-item:hover .file-hover-overlay {
+    opacity: 1;
+}
+
+.file-hover-overlay lightning-icon {
+    transform: scale(1.5);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+/* Force white color for overlay icon */
+.file-hover-overlay lightning-icon svg {
+    fill: #ffffff !important;
+}
+
+.file-hover-overlay lightning-icon svg path {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* Modal */
+.slds-modal {
+    z-index: 9001;
+}
+
+.slds-backdrop {
+    z-index: 9000;
+}
+
+.modal-image-container {
+    text-align: center;
+    max-height: 70vh;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    border-radius: 0.25rem;
+    object-fit: contain;
+}
+
+.slds-modal__header {
+    position: relative;
+}
+
+.slds-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+.slds-modal__title {
+    padding-right: 3rem;
+}
+
+.slds-modal__footer_directional {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slds-modal_large .slds-modal__container {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 40vh;
+}
+
+/* Animation for smooth state transitions */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.attachment-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .attachment-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .slds-modal_large .slds-modal__container {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-image {
+        max-height: 50vh;
+    }
+    
+    .slds-modal__close {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .attachment-filename {
+        font-size: 0.7rem;
+    }
+}
